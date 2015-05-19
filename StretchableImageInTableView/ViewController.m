@@ -7,9 +7,11 @@
 //
 
 #import "ViewController.h"
-#import "ImageCell.h"
+#import "HeaderView.h"
+
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet HeaderView *headerView;
 
 @end
 
@@ -29,37 +31,23 @@
     return 4;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    switch (section) {
-        case 0:
-            return 1;
-        default:
-            return 20;
-    }
+    return 20;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if(indexPath.section==0){
-        return 200;
-    }else{
-        return 40;
-    }
+    return 40;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if(indexPath.section==0){
-        ImageCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ImageCell" forIndexPath:indexPath];
-        return cell;
-    }else{
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-        cell.textLabel.text = [NSString stringWithFormat:@"section:%i, row:%i",(int)indexPath.section, (int)indexPath.row];
-        return cell;
-    }
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    cell.textLabel.text = [NSString stringWithFormat:@"section:%i, row:%i",(int)indexPath.section, (int)indexPath.row];
+    return cell;
 }
 #pragma mark UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    ImageCell *cell = (ImageCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
     CGFloat zeroPointY = scrollView.contentOffset.y + scrollView.contentInset.top;
-    if(cell.imageRatioConstraint && zeroPointY <= 0){
-        cell.imageHeightConstraint.constant = cell.frame.size.width / cell.imageRatioConstraint.multiplier - zeroPointY + 22;
-        [cell layoutIfNeeded];
+    if(self.headerView.imageRatioConstraint && zeroPointY <= 0){
+        self.headerView.imageHeightConstraint.constant = self.headerView.frame.size.width / self.headerView.imageRatioConstraint.multiplier - zeroPointY + 22;
+        NSLog(@"zeroPoint:%f, height:%f",zeroPointY, self.headerView.imageHeightConstraint.constant);
+        [self.headerView layoutIfNeeded];
     }
 }
 
