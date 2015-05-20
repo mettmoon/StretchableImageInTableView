@@ -16,7 +16,6 @@
 		BCB2D6601B02E699004B1897 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCB2D65E1B02E699004B1897 /* LaunchScreen.xib */; };
 		BCB2D66C1B02E699004B1897 /* StretchableImageInTableViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BCB2D66B1B02E699004B1897 /* StretchableImageInTableViewTests.m */; };
 		BCB2D6791B02E717004B1897 /* sample.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = BCB2D6781B02E717004B1897 /* sample.jpeg */; };
-		BCFB41AC1B0B858A006A5AF5 /* HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = BCFB41AB1B0B858A006A5AF5 /* HeaderView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,8 +44,6 @@
 		BCB2D66A1B02E699004B1897 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCB2D66B1B02E699004B1897 /* StretchableImageInTableViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StretchableImageInTableViewTests.m; sourceTree = "<group>"; };
 		BCB2D6781B02E717004B1897 /* sample.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sample.jpeg; sourceTree = "<group>"; };
-		BCFB41AA1B0B858A006A5AF5 /* HeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderView.h; sourceTree = "<group>"; };
-		BCFB41AB1B0B858A006A5AF5 /* HeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +91,6 @@
 				BCB2D6571B02E699004B1897 /* ViewController.m */,
 				BCB2D6781B02E717004B1897 /* sample.jpeg */,
 				BCB2D6591B02E699004B1897 /* Main.storyboard */,
-				BCFB41AA1B0B858A006A5AF5 /* HeaderView.h */,
-				BCFB41AB1B0B858A006A5AF5 /* HeaderView.m */,
 				BCB2D65C1B02E699004B1897 /* Images.xcassets */,
 				BCB2D65E1B02E699004B1897 /* LaunchScreen.xib */,
 				BCB2D6531B02E699004B1897 /* StretchableImageInTableView.xcdatamodeld */,
@@ -232,7 +227,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCB2D6551B02E699004B1897 /* StretchableImageInTableView.xcdatamodeld in Sources */,
-				BCFB41AC1B0B858A006A5AF5 /* HeaderView.m in Sources */,
 				BCB2D6521B02E699004B1897 /* AppDelegate.m in Sources */,
 				BCB2D6581B02E699004B1897 /* ViewController.m in Sources */,
 				BCB2D64F1B02E699004B1897 /* main.m in Sources */,

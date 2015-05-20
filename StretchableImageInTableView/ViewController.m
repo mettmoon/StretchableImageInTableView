@@ -7,11 +7,11 @@
 //
 
 #import "ViewController.h"
-#import "HeaderView.h"
 
 
 @interface ViewController ()
-@property (weak, nonatomic) IBOutlet HeaderView *headerView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *imageHeightConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *imageRatioConstraint;
 
 @end
 
@@ -44,10 +44,10 @@
 #pragma mark UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     CGFloat zeroPointY = scrollView.contentOffset.y + scrollView.contentInset.top;
-    if(self.headerView.imageRatioConstraint && zeroPointY <= 0){
-        self.headerView.imageHeightConstraint.constant = self.headerView.frame.size.width / self.headerView.imageRatioConstraint.multiplier - zeroPointY + 22;
-        NSLog(@"zeroPoint:%f, height:%f",zeroPointY, self.headerView.imageHeightConstraint.constant);
-        [self.headerView layoutIfNeeded];
+    if(self.imageRatioConstraint && zeroPointY <= 0){
+        self.imageHeightConstraint.constant = self.tableView.tableHeaderView.frame.size.width / self.imageRatioConstraint.multiplier - zeroPointY;
+        NSLog(@"zeroPoint:%f, height:%f",zeroPointY, self.imageHeightConstraint.constant);
+        [self.tableView.tableHeaderView layoutIfNeeded];
     }
 }
 

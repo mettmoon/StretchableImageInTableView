@@ -13,7 +13,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="ebJ-W1-zkM" customClass="HeaderView">
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="ebJ-W1-zkM">
                             <rect key="frame" x="0.0" y="64" width="600" height="180"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
@@ -32,10 +32,6 @@
                                 <constraint firstAttribute="bottom" secondItem="eFb-HB-LfC" secondAttribute="bottom" id="NJA-vX-f9t"/>
                                 <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="eFb-HB-LfC" secondAttribute="trailing" id="muF-YO-nHn"/>
                             </constraints>
-                            <connections>
-                                <outlet property="imageHeightConstraint" destination="5uL-hL-sQN" id="ONn-Yv-dH7"/>
-                                <outlet property="imageRatioConstraint" destination="2Ip-Gc-HWC" id="fn9-e0-c96"/>
-                            </connections>
                         </view>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="gow-ww-SXN" style="IBUITableViewCellStyleDefault" id="5ci-qF-yj0">
@@ -61,7 +57,8 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Stretchable Image In TableView" id="SXP-bv-7Fg"/>
                     <connections>
-                        <outlet property="headerView" destination="ebJ-W1-zkM" id="ngT-I7-Unw"/>
+                        <outlet property="imageHeightConstraint" destination="5uL-hL-sQN" id="zdi-RI-5GK"/>
+                        <outlet property="imageRatioConstraint" destination="2Ip-Gc-HWC" id="6IY-ST-ccX"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rb8-ZH-3EO" userLabel="First Responder" sceneMemberID="firstResponder"/>
